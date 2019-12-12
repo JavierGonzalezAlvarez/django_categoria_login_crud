@@ -20,7 +20,7 @@ from django.urls import reverse
 # Create your views here.
 
 #Clase que hereda de generic una clase llamada TemplateView
-class Home(generic.TemplateView):
+class Class_Home(generic.TemplateView):
     #class django.views.generic.base.TemplateView
     #This view inherits methods and attributes from the following views:
         #django.views.generic.base.TemplateResponseMixin
@@ -33,4 +33,4 @@ class Home(generic.TemplateView):
         #get_context_data()
 
     #TemplateView sólo tiene una propiedad
-    template_name = "base/base.html"
+    template_name = "base/html_base.html"
