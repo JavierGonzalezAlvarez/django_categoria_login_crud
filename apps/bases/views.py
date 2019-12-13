@@ -15,18 +15,21 @@ from django.template import Template, Context
 
 #import datetime
 #Para devolver a una URL despues de una acción
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
+#--------------------------------------------------------------
 #Mixins
 #Importo la Clase LoginRequiredMixin
+#Para que si un suario está logeado, que pase a admin
 from django.contrib.auth.mixins import LoginRequiredMixin
-
-
+#--------------------------------------------------------------
 
 # Create your views here.
 
 #Clase que hereda de generic una clase llamada TemplateView
 #Ahora le digo a Home que herede de Login... y de TemplateView
+#Los mixin deben de colocarse a la izquierda. El orden es importante, para dar prioridad
+#class Class_Home(generic.TemplateView):
 class Class_Home(LoginRequiredMixin, generic.TemplateView):
     #class django.views.generic.base.TemplateView
     #This view inherits methods and attributes from the following views:
@@ -40,6 +43,11 @@ class Class_Home(LoginRequiredMixin, generic.TemplateView):
         #get_context_data()
 
     #TemplateView sólo tiene una propiedad.
-    #indico donde esta la plantilla
+    #Indico donde esta la plantilla
+    #Esta es la antigua
     #template_name = "base/html_base.html"
-    template_name = "bases/html_home.html"
+    template_name = 'bases/html_home.html'
+    #Indico el mixin para que si queireo ver la vista 'bases/html_home.html' 
+    # y si no estoy autenticado me redirige al login
+    login_url = '/admin'
+    
