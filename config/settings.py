@@ -23,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '#4u==6afsjfcn-*&*ka)(btx%=yu*$)9^jd)*w7^yx&o%6ra6z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#Importante: Cambiar a FALSE, en produccion
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -125,8 +126,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-#Como se llama el archivo de static?
-STATIC_URL = '/static/'
+#¿Donde está la ruta donde están los archivos estaticos?
+STATIC_URL = '/static/base/'
 #Añadimos un fichero CSS, y de decimos a Django donde está
 #Donde está el directorio de static?
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+#LOGIN
+#Una vez que entramos desde http://127.0.0.1:8000/login/ nos redirije la pagina home.html
+#Para ello he de decirle a donde debo redirigir una vez que entre
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/login/'

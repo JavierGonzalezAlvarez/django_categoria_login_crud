@@ -1,4 +1,5 @@
-{% load static %}
+
+{% load staticfiles %}
 <!DOCTYPE html>
 <!-- <html lang="en"> -->
 <!-- Cambiamos lenguaje -->
@@ -15,15 +16,17 @@
   <title>Facturación y Compras</title>
 
   <!-- Custom fonts for this template-->
+  {% load static %}
   <link href="{% static 'base/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
+  {% load static %}
   <link href="{% static 'base/css/sb-admin-2.min.css' %}" rel="stylesheet">
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="bg-gradient-primary">
 
 <!-- Separamos en bloque lo que las plantillas hijas van a anular 
 Añado ste bloque. El cual separa la plantilla-->
@@ -384,21 +387,26 @@ Añado ste bloque. El cual separa la plantilla-->
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="{% url 'bases:logout' %}">Salir</a>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Bootstrap core JavaScript-->
+  {% load static %}
   <script src="{% static 'base/vendor/jquery/jquery.min.js' %}"></script>
+  {% load static %}
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
   <!-- Core plugin JavaScript-->
+  {% load static %}
   <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
   <!-- Custom scripts for all pages-->
+  {% load static %}
   <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+
 
   {% block js_page %} {% endblock js_page %}
 </body>

@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path(route, view, kwargs=None, name=None)
@@ -23,5 +24,7 @@ urlpatterns = [
     #include(module, namespace=None)
     #module – URLconf module (or module name)
     #namespace (str) – Instance namespace for the URL entries being included
-    path('', include(('apps.bases.urls','bases'), namespace='bases')), 
+
+    #Incluyo los path de las Apps en el fichero URLS.PY general
+    path('', include(('apps.bases.urls','bases'), namespace='bases')),   
 ]
