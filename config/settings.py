@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -28,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,8 +35,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #Añadimos las Apps
-    'apps.bases.apps.BasesConfig',
+    #Añadimos las Apps, dos formas:
+    #'apps.bases.apps.BasesConfig',
+    #'apps.inv.apps.InvConfig',
+    'apps.bases',
+    'apps.inv',
 ]
 
 MIDDLEWARE = [
@@ -112,7 +113,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+#LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
 
 TIME_ZONE = 'UTC'
 
@@ -129,8 +131,8 @@ USE_TZ = True
 #¿Donde está la ruta donde están los archivos estaticos?
 STATIC_URL = '/static/base/'
 #Añadimos un fichero CSS, y de decimos a Django donde está
-#Donde está el directorio de static?
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+#¿Donde está el directorio de static?
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/')]
 
 #LOGIN
 #Una vez que entramos desde http://127.0.0.1:8000/login/ nos redirije la pagina home.html

@@ -23,7 +23,6 @@ urlpatterns = [
     #Reutilizamosuna vista luego pongo e indico donde esta la plantilla => as_view(template_name='bases/html_login.html')
     #A la URL le llamamos => name='html_login'
     path('login/',auth_views.LoginView.as_view(template_name='bases/html_login.html'), name='html_login'),
-
     #Ponemos la ruta de logout
     path('logout/',auth_views.LogoutView.as_view(template_name='bases/html_login.html'), name='logout'),
 ]

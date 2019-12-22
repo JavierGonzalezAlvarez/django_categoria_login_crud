@@ -27,4 +27,7 @@ urlpatterns = [
 
     #Incluyo los path de las Apps en el fichero URLS.PY general
     path('', include(('apps.bases.urls','bases'), namespace='bases')),   
+    #Le digo que cuando alguien escriba en la url la peticion "inv/"
+    # va a resolver en el archivo de ruta de la app INV
+    path('inv/', include(('apps.inv.urls','inv'), namespace='inv')),   
 ]
