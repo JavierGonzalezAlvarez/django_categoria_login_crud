@@ -27,7 +27,7 @@ class class_Categoria_Form(forms.Modelform):
             #A ese campo que recorre le asigna un Widget
             #y le asigna un atributo que va a cambiar
             self.fields[campos_a_recorrer].widget.attrs.update({
-                #Que va a cambiar?, la class, que le va a poner form.control
+                #¿Qué va a cambiar?, la class, que le va a poner form.control
                 'class': 'form.control'
             })
 
