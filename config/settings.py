@@ -132,7 +132,7 @@ USE_TZ = True
 STATIC_URL = '/static/base/'
 #Añadimos un fichero CSS, y de decimos a Django donde está
 #¿Donde está el directorio de static?
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/base/')]
 
 #LOGIN
 #Una vez que entramos desde http://127.0.0.1:8000/login/ nos redirije la pagina home.html

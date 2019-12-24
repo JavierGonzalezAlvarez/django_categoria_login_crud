@@ -22,7 +22,8 @@ class class_CategoriaView(LoginRequiredMixin, generic.ListView):
     # el nombre con context_object_name
     context_object_name = "obj"
     #Si no estamos logeados, que nos pida logearnos
-    login_url = "bases/login"
+    #Si no estasmos redireccionados nos vamos a bases:html_login
+    login_url = "bases:html_login"
     
 
 

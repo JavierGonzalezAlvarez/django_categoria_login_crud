@@ -26,9 +26,6 @@
                       Recorremos el formulario para ver si hay errores -->
                       <small class="text-danger">                                      
 
-                        {% block js_page %}
-                        <script>
-
                         {% if form.errors %}                            
                           {% for field in form %}
                             {% if field.errors %}                            
@@ -45,8 +42,7 @@
                           {% endif %}
                         {% endif %}
 
-                      </script>
-                    {% endblock %}
+                      
 
                       </small>                    
                   </div>

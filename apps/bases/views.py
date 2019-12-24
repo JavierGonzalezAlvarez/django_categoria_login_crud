@@ -45,7 +45,8 @@ class Class_Home(LoginRequiredMixin, generic.TemplateView):
     #TemplateView sólo tiene una propiedad.
     #Indico donde está la plantilla
     #Esta es la antigua =>  #template_name = "base/html_base.html"
-    template_name = 'bases:html_home.html'
+    #template_name = 'bases:html_home.html' <== No funciona
+    template_name = 'bases/html_home.html'
     #Indico el mixin para que si queireo ver la vista 'bases/html_home.html' 
     # y si no estoy autenticado me redirige al login.
     #Si intento entrar al home, me redirecciona a esta URL
