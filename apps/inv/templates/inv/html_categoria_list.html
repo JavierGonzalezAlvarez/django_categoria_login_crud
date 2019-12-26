@@ -14,7 +14,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
             <div class="dropdown-header">Listado de Categorías:</div>
-            <a class="dropdown-item" href="#">Acciones</a>
+            <a class="dropdown-item" href="{% url 'inv:html_categoria_form' %}">Nueva</a>
             <a class="dropdown-item" href="#">Another action</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="#">Something else here</a>
@@ -72,7 +72,7 @@
   </div>
 {% endblock %}
 
-<!-- Vamos a poner un DAtaTable y he de poner esto 
+<!-- Vamos a poner un DataTable y he de poner esto 
    para que en cada pagina inicialice con un DataTable -->
 {% block js_page %}
 {% endblock %}

@@ -1,0 +1,40 @@
+<!-- Hereda de esta plantilla html_base.html-->
+{% extends 'base/html_base.html' %}
+
+
+{% block page_content %}
+    <!-- Earnings (Monthly) Card Example -->
+    <!-- Creamos el formulario -->
+    <form method="POST" class=form-inline>
+        {% csrf_token %}
+        <!-- <div class="col-xl-3 col-md-6 mb-4"> 
+            Amplio el tamaño: -->
+        <div class="col-xl-6 col-md-6 mb-6">
+            <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                        Nueva Categoría
+                    </div>
+                    <!-- Lo quito:
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div> -->
+                    <!-- Aquí ya coloco los campos del formulario. De dos formas:
+                        1. Manualmente
+                        2. Con el formulario de Django -->
+                     {{ form.as_p }}   
+                        
+                </div>
+                <div class="col-auto">
+                    <!-- Imagen que aparece, lo quito
+                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i> -->
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block js_page %}
+{% endblock %}

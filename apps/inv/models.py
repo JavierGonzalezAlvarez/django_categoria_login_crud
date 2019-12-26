@@ -1,5 +1,4 @@
 from django.db import models
-
 #Importamos la Clase de la App "Bases"
 from apps.bases.models import ClaseModelo
 # Create your models here.
@@ -10,12 +9,12 @@ class Categoria(ClaseModelo):
     #Sólo usamos la descripción
     descripcion = models.CharField(
         max_length=100, 
-        help_text="Descripciónde la categoría",
+        help_text="Ayuda => Descripción de la categoría",
         unique=True
         )
     
     #Cuando hagamos referencia al modelo Categoria, Django va a poner un
-    #valor hexadecimos por defecto, para transformarlo usamos STR de un campo
+    # valor hexadecimal por defecto, para transformarlo usamos STR de un campo
     #Todos lo metodos siempre reciebn algo, sino se usa self
     def __str__ (self):
         return '{}'.format(self.descripcion)
