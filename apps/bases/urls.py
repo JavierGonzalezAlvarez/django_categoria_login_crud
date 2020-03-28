@@ -7,7 +7,6 @@ from django.contrib.auth import views as auth_views
 #Son las URL's de las paginas HTML que estan en la App
 urlpatterns = [
     #¿Que hay dentro?
-
     path('', Class_Home.as_view(), name='html_home'),       
     path('login/',auth_views.LoginView.as_view(template_name='bases/html_login.html'), name='html_login'),
     #Ponemos la ruta de logout
