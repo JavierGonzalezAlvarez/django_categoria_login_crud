@@ -34,8 +34,3 @@ DATABASES = {
 }
 
 
-  <!-- Custom styles for this page -->
-  <!-- Pintamos las tablas -->
-  {% load static %}
-  <link href="{% static 'vendor/datatables/dataTables.bootstrap4.min.css' %}" rel="stylesheet">
-
