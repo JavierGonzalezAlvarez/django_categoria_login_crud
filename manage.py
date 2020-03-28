@@ -3,7 +3,6 @@
 import os
 import sys
 
-
 def main():
     #Coloco el path de setting.py => config.setting
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
