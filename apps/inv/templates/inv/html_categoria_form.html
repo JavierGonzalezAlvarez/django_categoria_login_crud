@@ -1,40 +1,92 @@
 <!-- Hereda de esta plantilla html_base.html-->
 {% extends 'base/html_base.html' %}
 
-
 {% block page_content %}
-    <!-- Earnings (Monthly) Card Example -->
-    <!-- Creamos el formulario -->
-    <form method="POST" class=form-inline>
-        {% csrf_token %}
-        <!-- <div class="col-xl-3 col-md-6 mb-4"> 
-            Amplio el tamaño: -->
-        <div class="col-xl-6 col-md-6 mb-6">
+<!-- Earnings (Monthly) Card Example -->
+<!-- Creamos el formulario -->
+<form method="POST" class="form-inline">
+    {% csrf_token %}
+    <!-- <div class="col-xl-3 col-md-6 mb-4"> 
+    Amplio el tamaño: -->
+    <div class="col-xl-6 col-md-6 mb-6">
+        <!-- Para preguntar por el color. Si objeto que viene o hay datos-->
+        {% if obj %}
+            <!-- Le ponemos un color distinto, en este caso rojo -->
+            <div class="card border-left-warning shadow h-100 py-2">
+        {% else %}
+            <!-- Colocamos otro color en este caso "success" -->
             <div class="card border-left-success shadow h-100 py-2">
+        {% endif %}
             <div class="card-body">
-                <div class="row no-gutters align-items-center">
+            <div class="row no-gutters align-items-center">
                 <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                        Nueva Categoría
+                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                        <!-- Preguntamos lo mismo que antes. Si hay un valor: Editar-->
+                        {% if obj %}
+                             Editar 
+                        {% else %}                        
+                             Nueva 
+                        {% endif %}
+                        Categoría
                     </div>
+                    <!-- Colocamos esta linea. Es de la plantilla original 
+                    Para que haga una dividion del titulo -->
+                    <div class="dropdown-divider"></div>
                     <!-- Lo quito:
                         <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div> -->
                     <!-- Aquí ya coloco los campos del formulario. De dos formas:
                         1. Manualmente
                         2. Con el formulario de Django -->
-                     {{ form.as_p }}   
-                        
-                </div>
-                <div class="col-auto">
-                    <!-- Imagen que aparece, lo quito
-                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i> -->
-                </div>
+                        <!-- {{ form.as_p }} --> 
+                    
+                        <!-- 1. Manualmente  -->                    
+                    <div class="dropdown-divider"></div>
+                    <div class="row">
+                        <!-- Escribimos dos div. En el tamaño de 10 va la descripcion -->
+                        <div class="col-10">
+                            <div class="input-group">
+                                <!-- Importante que el name sea el del "modelo (model) y el id es igual que como hicimos en el login" -->
+                                <input type="text" name="descripcion" maxlength="100" class="form-control" required id="id_descripcion" placeholder="Descripción"                                                                    
+                                    value="{% if obj %} {{ obj.descripcion }} {% endif %}">
+                                <!-- Si vamos a editar un formulario debemos de usar la opcion value. 
+                                 Si hay objeto, imprimo la variable, sino hno hace nada, no pongo else -->
+                            </div>
+                        </div>
+                        <!-- Escribimos dos div. En el tamaño de 2 va el estado -->
+                        <div class="col-2">
+                            <div class="form-group">
+                                <label for="id_estado">Estado</label>
+                                <input type="checkbox" name="estado" class="form-control" id="id_estado"
+                                    {% if obj.estado %} 
+                                        checked 
+                                    {% endif %} >
+                                   <!-- con el cjeckbox hacemos lo mismo --> 
+                            </div>
+                        </div>                     
+                        <!-- 2. Si no se hace de forma manual  -->
+                        <!-- {{ form.as_p }} -->
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="row">
+                        <div class="col">
+                            <!-- Aqui estan lo botones, es decir un boton submit de color rojo -->
+                            <button type="submit" class="btn btn-danger"><span class="fa fa-save"></span> Guardar</button>
+                            <!-- Boton de cancelar, y con un vinculo para que si cancelamos se regresa a la lista de la categoria -->
+                            <a href="{% url 'inv:html_categoria_list' %}" class="btn btn-success"><span class="fa fa-undo"></span>Cancelar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             </div>
         </div>
-    </form>
+    </div>
+</form>
 {% endblock %}
 
+<!-- Pegamos JS en esta parte. Lo sacamos de la documentacion de Jquery -->   
 {% block js_page %}
+
 {% endblock %}
+
+
+

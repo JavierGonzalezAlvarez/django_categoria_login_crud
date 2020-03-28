@@ -34,10 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    #Añadimos las Apps, dos formas:
-    #'apps.bases.apps.BasesConfig',
-    #'apps.inv.apps.InvConfig',
+    'django.contrib.staticfiles',    
     'apps.bases',
     'apps.inv',
 ]
@@ -52,8 +49,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-#Cambio la ruta. Al crear el proyecyo le di un nombre, yo luego he cambiado 
-#el nombre de la carpeta. Entonces he de cambiar el nombre aquí tb
 ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
@@ -76,14 +71,13 @@ TEMPLATES = [
 #Coloco donde está. La carpeta
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'appcurso',
+        'NAME': 'crear_categoria',
         'USER': 'postgres',
         'PASSWORD': '257_AcD8E',
         'HOST': 'localhost',
@@ -91,9 +85,6 @@ DATABASES = {
     }
 }
 
-
-# Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -110,9 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/2.2/topics/i18n/
-
 #LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'es'
 
@@ -124,14 +112,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 #¿Donde está la ruta donde están los archivos estaticos?
 STATIC_URL = '/static/base/'
-#Añadimos un fichero CSS, y de decimos a Django donde está
-#¿Donde está el directorio de static?
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/base/')]
 
 #LOGIN
