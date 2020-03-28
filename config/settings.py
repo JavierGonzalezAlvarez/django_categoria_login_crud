@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'crear_categoria',
         'USER': 'postgres',
-        'PASSWORD': '257_AcD8E',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432'
     }
