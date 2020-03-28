@@ -19,7 +19,7 @@ pss: admin
 
 Con la BBDD Postgresql:
 -Instalar postgresql
--Crear una base de datos configurando los aprametros de conexion en local
+-Crear una base de datos configurando los parametros de conexion en local
 
 config/settings.py
 DATABASES = {
